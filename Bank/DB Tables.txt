@@ -1,0 +1,7 @@
+Table for Account Details:
+-----------------------------------
+create table Bank( fname  varchar(15),lname  varchar(15),mob    varchar(10),email  varchar(25),city   varchar(20),state  varchar(20) ,uname  varchar(20),pswd  varchar(12),money  double ,accno| varchar(10) not null);
+
+Table for Statements:
+-------------------------------
+create table state(dt varchar(20), tp   varchar(20),fr   varchar(15) , money  double);

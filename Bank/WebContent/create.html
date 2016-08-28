@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Create New Account</title>
+<script type="text/javascript">
+ 
+  
+var r;  
+function sendInfo()  
+{  
+var v=document.getElementById("un").value;  
+var url="ajaxcall.jsp?val="+v;  
+  
+ 
+ if(window.XMLHttpRequest){  
+r=new XMLHttpRequest();  
+}  
+else if(window.ActiveXObject){  
+r=new ActiveXObject("Microsoft.XMLHTTP");  
+}  
+  
+try{  
+r.onreadystatechange=getInfo;  
+r.open("GET",url,true);  
+r.send();  
+}catch(e){alert("Unable to connect to server");}  
+}  
+  
+function getInfo(){  
+if(r.readyState==4){  
+var val=r.responseText;  
+document.getElementById("amit").innerHTML=val;  
+}  
+}  
+  
+
+</script>
+</head>
+<body>
+<h1 align="center"><font color="Blue">Admin</font><br>
+<button><a href="deposit.jsp">Deposit</a></button>
+<button><a href="view.html"></a>View All Accounts</button> 
+<button><a href="delete.html"></a>Delete Account </button>
+<button><a href="Logoutadmin.jsp">Log out</a></button> </h1>
+<h1 align="center"><font color="Blue">Create Account</font></h1>
+<form action="create.jsp" method="post" onsubmit="return validate();"><pre>
+<h2 align="center">
+First Name     <input type="text" name="fn"><br>
+Last Name      <input type="text" name="ln"><br>
+Mobile Number  <input type="text" name="mob"><br>
+E-Mail         <input type="email" name="em"><br>
+City           <input type="text" name="ct"><br>
+State          <input type="text" name="st"><br>
+ User Name      <input type="text" name="un" onkeyup="sendInfo()"><span id="amit"> </span> <br> 
+Password       <input type="password" name="ps"><br>
+Account Number <input type="text" name="ac"><br>
+Money          <input type="number" name="mn"><br>
+<input type="submit" value="Create">
+</h2></pre>
+</form> 
+</body>
+
+<footer>
+<h3 ><font color="blue">All Rights Reserved. Developed by </font><font color="green">Rajesh Seeloju</font></h3>
+</footer>
+
+</html>
